@@ -1,0 +1,759 @@
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+  height: 100%;
+  background: rgb(2,0,36);
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%); 
+}
+
+
+* {
+  box-sizing: inherit;
+  
+}
+
+
+body {
+  margin: 0rem 0;
+  font: 600 1rem "Barlow Semi Condensed", Sans-serif;
+}
+
+
+:focus {
+  outline: 3px solid hsl(198, 98%, 53%);
+}
+
+
+.header {
+  display: flex;
+  width: 100%;
+  max-width: 76rem;
+  margin: 0 auto;
+  justify-content: space-between;
+  padding: 1.5rem 3rem;
+  border: 2px solid hsla(217, 16%, 45%, 0);
+  border-radius: 8px;
+}
+
+
+/* Radio clock */
+.clock {
+  padding: 0;
+  font-size: 2em;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  margin: 0;
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px;
+  background-color: rgba(51, 51, 51, 0);
+  z-index: 1;
+}
+/* End of radio clock */
+
+
+/* ---Audio player----- */
+.box {
+  padding-bottom: 8rem;
+  margin-top: 2rem;
+}
+
+
+/* Audio player container */
+.audio-player {
+  position: relative;
+  width: 100%;
+  text-align: center;
+}
+
+
+/* Circle play button */
+.circle-button {
+  background-color: #fff;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  font-size: 2em;
+  color: #000;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  margin-top: 50px;
+}
+
+
+/* Change play button color to green on play */
+.circle-button.playing {
+  background-color: green;
+  color: #fff;
+}
+
+
+/* Make sure the button stays centered */
+.circle-button,
+.audio-player audio,
+.audio-controls {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+.audio-controls {
+  top: 50%; /* Adjust as needed */
+}
+
+
+/* Select audio button */
+.select-audio-button {
+  background-color: #fff;
+  color: #000;
+  padding: 8px 20px;
+  border-radius: 20px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+
+/* Hide the file input */
+#audio-file {
+  display: none;
+}
+
+
+/* Add a class to rotate the icon */
+.fa-spin {
+  animation: fa-spin 1s infinite linear;
+  padding-left: 5px;
+}
+
+
+@keyframes fa-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+/* End of audio player */
+
+
+/* Score card */
+.score {
+  width: 12rem;
+  text-align: center;
+  line-height: 4.5rem;
+  background: hsl(0, 0%, 100%);
+  color: hsl(240, 3%, 7%);
+  border-radius: 8px;
+}
+
+
+.score > span {
+  display: block;
+}
+
+
+.score > span:first-child {
+  color: hsl(230, 23%, 10%);
+  font-size: 1.6rem;
+  text-transform: uppercase;
+}
+
+
+#score {
+  font-size: 6rem;
+  font-weight: 700;
+}
+/* End of score card */
+
+
+/* bg music sound Switch */
+.sound-switch {
+  margin: 10px auto;
+  width: 6rem;
+}
+
+
+#switch {
+  visibility: hidden;
+  position: absolute;
+  margin-left: -9999px;
+}
+
+
+.sound-switch span {
+  display: block;
+  text-align: center;
+  color: rgb(196, 83, 244);
+  font-size: 1.4rem;
+  margin: 0;
+}
+
+
+#switch + label {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  outline: none;
+  user-select: none;
+}
+
+
+#switch + label {
+  padding: 2px;
+  width: 6rem;
+  height: 3rem;
+  background-color: hsl(120, 2%, 81%);
+  border-radius: 3rem;
+}
+
+
+#switch + label:before,
+#switch + label:after {
+  display: block;
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  bottom: 1px;
+  content: "";
+}
+
+
+#switch + label:before {
+  right: 1px;
+  background-color: hsl(0, 100%, 51%);
+  border-radius: 3rem;
+  transition: background 0.4s;
+}
+
+
+#switch + label:after {
+  width: 3rem;
+  background-color: hsl(0, 0%, 100%);
+  border-radius: 100%;
+  box-shadow: 0 2px 5px hsl(0, 0%, 0%);
+  transition: all 0.4s;
+}
+
+
+#switch:checked + label:before {
+  background-color: hsl(109, 80%, 57%);
+}
+
+
+#switch:checked + label:after {
+  transform: translateX(3rem);
+}
+/* End Sound Switch */
+
+
+.main {
+  position: relative;
+  width: 100%;
+  max-width: 42rem;
+  margin: 0 auto;
+  height: 50rem;
+  background-image: url(../images/bg-pentagon.svg);
+  background-repeat: no-repeat;
+  background-size: 70%;
+  background-position: center 6rem;
+}
+
+
+body h1,
+section h2 {
+  display: none;
+}
+
+
+.result .main {
+  max-width: 96rem;
+  height: 34rem;
+  background-image: none;
+}
+
+
+.icon {
+  cursor: pointer;
+  width: 12rem;
+  height: 12rem;
+  position: absolute;
+  border: 14px solid;
+  border-radius: 50%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: hsl(0, 0%, 100%);
+  transition: ease-out 300ms;
+}
+
+
+.icon:hover {
+  transform: scale(1.1);
+  transition: ease-in 300ms;
+  opacity: 0.85;
+}
+
+
+.scissors {
+  top: 0;
+  left: calc(50% - 6.5rem);
+  background-image: url(../images/icon-scissors.svg);
+  border-color: hsl(40, 84%, 53%);
+  box-shadow: 0 6px 0 0 hsl(40, 94%, 40%), inset 0 6px 3px 0 hsl(240, 1%, 63%);
+}
+
+
+.spock {
+  top: 11rem;
+  left: calc(50% - 21rem);
+  background-image: url(../images/icon-spock.svg);
+  border-color: hsl(189, 58%, 57%);
+  box-shadow: 0 6px 0 0 hsl(189, 68%, 44%), inset 0 6px 3px 0 hsl(240, 1%, 63%);
+}
+
+
+.paper {
+  top: 11rem;
+  right: calc(50% - 21rem);
+  background-image: url(../images/icon-paper.svg);
+  border-color: hsl(231, 91%, 66%);
+  box-shadow: 0 6px 0 0 hsl(231, 94%, 42%), inset 0 6px 3px 0 hsl(240, 1%, 63%);
+}
+
+
+.lizard {
+  top: 29rem;
+  left: calc(50% - 15rem);
+  background-image: url(../images/icon-lizard.svg);
+  border-color: hsl(261, 63%, 63%);
+  box-shadow: 0 6px 0 0 hsl(261, 67%, 42%), inset 0 6px 3px 0 hsl(240, 1%, 63%);
+}
+
+
+.rock {
+  top: 29rem;
+  right: calc(50% - 15rem);
+  background-image: url(../images/icon-rock.svg);
+  border-color: hsl(350, 68%, 56%);
+  box-shadow: 0 6px 0 0 hsl(350, 94%, 32%), inset 0 6px 3px 0 hsl(240, 1%, 63%);
+}
+
+
+#openModal {
+  font-family: "Barlow Semi Condensed", sans-serif;
+  background: transparent;
+  border: 1px solid hsl(217, 16%, 45%);
+  border-radius: 6px;
+  color: hsl(0, 0%, 100%);
+  display: block;
+  width: 11rem;
+  margin: 8px auto;
+  padding: 1rem 0;
+  font-weight: 700;
+  cursor: pointer;
+  transition: ease-out 300ms;
+}
+
+
+.result #openModal {
+  top: 30rem;
+  right: 0rem;
+  left: auto;
+}
+
+
+#openModal:hover {
+  background: hsl(124, 95%, 50%);
+  transition: ease-in 300ms;
+  transform: rotate(360deg);
+}
+
+
+#resultPage {
+  display: none;
+}
+
+
+#resultPage .icon {
+  width: 15rem;
+  height: 15rem;
+  top: 3rem;
+}
+
+
+#resultPage .icon {
+  cursor: default;
+}
+
+
+#resultPage .icon:hover {
+  transform: scale(1);
+}
+
+
+#userIcon {
+  left: 10rem;
+}
+
+
+#houseIcon {
+  left: auto;
+  right: 10rem;
+}
+
+
+.picked {
+  position: absolute;
+  top: 0rem;
+  font-size: 2rem;
+  color: hsl(0, 0%, 100%);
+}
+
+
+#youPicked {
+  left: 13.5%;
+}
+
+
+#housePicked {
+  right: 11%;
+}
+
+#whoWon,
+#playAgain {
+  display: none;
+}
+
+
+#whoWon {
+  text-align: center;
+  width: 25rem;
+  position: absolute;
+  top: 14rem;
+  left: calc(50% - 12.5rem);
+  font-size: 4rem;
+  color: hsl(0, 0%, 100%);
+}
+
+
+/* You Won Text Animation */
+@keyframes animateYouWonMessage {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+
+/* You Won Text Animation */
+#you-win-message {
+  animation-name: animateYouWonMessage;
+  animation-duration: 300ms;
+  animation-timing-function: linear;
+}
+
+
+#playAgain {
+  position: absolute;
+  width: 20rem;
+  top: 20rem;
+  left: calc(50% - 10rem);
+  font: 2rem "Barlow Semi Condensed", sans-serif;
+  background: hsl(0, 99%, 51%);
+  border: 1px solid hsl(217, 16%, 45%);
+  border-radius: 6px;
+  color: hsl(0, 0%, 100%);
+  padding: 1rem 0;
+  font-weight: 700;
+  cursor: pointer;
+  transition: ease-out 300ms;
+}
+
+
+#playAgain:hover {
+  background: hsl(111, 100%, 50%);
+  color: hsl(228, 96%, 18%);
+  transition: ease-in 300ms;
+}
+
+
+/* Footer */
+.attribution {
+  padding: 1px;
+  margin: 0;
+  width: 100%;
+  bottom: 0;
+  padding-top: 2em;
+}
+
+
+.attribution {
+  font-size: 1.4rem;
+  color: hsla(55, 91%, 50%, 0.96);
+  text-align: center;
+}
+
+
+.attribution a,
+.attribution a:visited {
+  color: hsl(270, 100%, 57%);
+}
+
+
+.attribution a:hover {
+  color: hsl(0, 0%, 100%);
+  text-decoration: none;
+}
+
+
+.contact-info {
+  margin: auto;
+  text-align: center;
+  letter-spacing: 4px;
+  display: block;
+  padding: 5px;
+  background: rgba(255, 255, 255, 0);
+}
+
+
+.contact-info p {
+  padding: 5px;
+  color: #ffffff;
+}
+
+
+.social-networks {
+  text-align: center;
+  padding-right: 2em;
+}
+
+
+.social-networks li {
+  display: inline;
+}
+
+
+.social-networks i {
+  font-size: 150%;
+  padding: 20px;
+  color: #2291ff;
+}
+
+
+.social-networks i:hover {
+  font-size: 150%;
+  padding: 20px;
+  color: #faf8f6;
+  background: rgb(0, 164, 252);
+  border-radius: 50%;
+  transition: 0.5s ease-in-out;
+  transform: scale(1.2);
+}
+
+
+.footer-container {
+  margin-bottom: 0;
+}
+/* --------End of footer---------- */
+
+
+/* Modal */
+#modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 5rem;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: auto;
+  background-color: hsl(0, 0%, 0%);
+  background-color: hsla(0, 0%, 0%, 0.8);
+}
+
+
+/* Modal Content */
+#modalContent {
+  position: relative;
+  background-color: hsl(0, 0%, 100%);
+  margin: auto;
+  width: 100%;
+  max-width: 40rem;
+  padding: 2rem;
+  text-align: center;
+  border: 1px solid hsl(0, 0%, 53%);
+  border-radius: 10px;
+  animation-name: animate-show;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+}
+
+
+#modalContent img {
+  width: 100%;
+}
+
+
+/* The Close Modal Button */
+#closeModal {
+  color: hsl(0, 0%, 67%);
+  float: right;
+  font-size: 5rem;
+  font-weight: bold;
+  width: 4rem;
+  height: 4rem;
+  line-height: 4rem;
+  background: none;
+  border: none;
+}
+
+
+#closeModal:hover,
+#closeModal:focus {
+  color: hsl(0, 0%, 0%);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+/* Modal Animation */
+@keyframes animate-show {
+  from {
+    top: -50rem;
+  }
+
+  to {
+    top: 0;
+  }
+}
+/* End Modal */
+
+
+/* Media Queries */
+@media screen and (max-width: 42rem) {
+  .modal-content img {
+    width: 80%;
+  }
+  body {
+    margin: 1rem;
+  }
+  .header {
+    max-width: 42rem;
+    height: 10rem;
+    padding: 0.5rem 1rem;
+  }
+  .logo img {
+    height: 9rem !important;
+  }
+  .score {
+    height: 8.5rem;
+    line-height: normal;
+  }
+  #score {
+    font-size: 5rem;
+  }
+  .main {
+    background-size: 24rem;
+    background-position: 50% 4rem;
+    height: 30.5rem;
+  }
+  .result .main {
+    height: 30rem;
+  }
+  .icon {
+    transform: scale(0.7);
+  }
+  .icon:hover {
+    transform: scale(0.9);
+    transition: ease-in 300ms;
+    opacity: 0.85;
+  }
+  #resultPage .icon:hover {
+    transform: scale(0.8);
+    cursor: default;
+  }
+  .scissors {
+    top: -2rem;
+    left: calc(50% - 5.5rem);
+  }
+  .spock {
+    top: 6rem;
+    left: calc(50% - 17.5rem);
+  }
+  .paper {
+    top: 6rem;
+    right: calc(50% - 17.5rem);
+  }
+  .lizard {
+    top: 19rem;
+    left: calc(50% - 12.5rem);
+  }
+  .rock {
+    top: 19rem;
+    right: calc(50% - 12.5rem);
+  }
+  .picked {
+    font-size: 1.5rem;
+    top: 11rem;
+  }
+  #youPicked {
+    left: 1rem;
+  }
+  #housePicked {
+    right: 0.5rem;
+  }
+  #resultPage .icon {
+    top: -3rem;
+  }
+  #userIcon {
+    left: 0;
+  }
+  #houseIcon {
+    right: 0;
+  }
+  #playAgain {
+    top: 18rem;
+  }
+  #whoWon {
+    top: 13rem;
+    font-size: 3rem;
+  }
+  .result #openModal {
+    top: 24rem;
+    left: calc(50% - 55px);
+  }
+  .result #openModal {
+    top: 24rem;
+    left: calc(50% - 55px);
+  }
+  #openModal {
+    top: 31rem;
+    left: calc(50% - 55px);
+  }
+  .main {
+    height: 36rem;
+  }
+}
+
+
+@media (max-width: 42rem) {
+  footer {
+    text-align: center;
+  }
+}
+/* End Media Queries */

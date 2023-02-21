@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!--Header -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <title>TERENCE LEWIS | Rock, Paper, Scissors, Lizard, Spock</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed:400,600,700&amp;lang=en"
+      type="text/css"
+    />
+    <link rel="stylesheet" href="css/main.css" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <!-- End of Header -->
+
+  <!-- Body -->
+  <body>
+    <!-- Logo -->
+    <h1>Terence's | Rock, Paper, Scissors, Lizard, Spock</h1>
+    <div class="header">
+      <div class="logo">
+        <img
+          src="images/logo-bonus.svg"
+          alt="Rock,Paper,Scissors,Lizard,Spock"
+        />
+      </div>
+      <!-- End of logo -->
+      <!-- date clock -->
+      <div class="clock">
+        <span id="date"></span>
+        <span id="time"></span>
+      </div>
+      <!-- End of clock -->
+
+      <!-- Score card -->
+      <div class="score" role="region">
+        <span>Score</span>
+        <span id="score">0</span>
+      </div>
+      <!-- End of score card -->
+    </div>
+
+    <!-- Audio player -->
+    <div class="box">
+      <div class="audio-player">
+        <audio id="audio"></audio>
+        <div class="audio-controls">
+          <button id="play-button" class="circle-button">
+            <i class="fas fa-play" id="play-icon"></i>
+          </button>
+          <input type="file" id="audio-file" accept="audio/mp3, audio/wav" />
+          <label for="audio-file" class="select-audio-button"
+            >Select Audio</label
+          >
+        </div>
+      </div>
+    </div>
+    <!-- End of audio player -->
+
+    <button id="openModal">RULES</button>
+    <aside class="sound-switch">
+      <input id="switch" type="checkbox" />
+      <label for="switch"></label>
+      <span>BG-SOUND</span>
+    </aside>
+
+    <div class="main">
+      <section id="startPage">
+        <h2 aria-hidden="true">Home Page | Start Game</h2>
+        <div
+          data-choice="scissors"
+          class="icon scissors"
+          role="button"
+          tabindex="1"
+          aria-label="scissors"
+        ></div>
+        <div
+          data-choice="spock"
+          class="icon spock"
+          role="button"
+          tabindex="2"
+          aria-label="spock"
+        ></div>
+        <div
+          data-choice="paper"
+          class="icon paper"
+          role="button"
+          tabindex="3"
+          aria-label="paper"
+        ></div>
+        <div
+          data-choice="lizard"
+          class="icon lizard"
+          role="button"
+          tabindex="4"
+          aria-label="lizard"
+        ></div>
+        <div
+          data-choice="rock"
+          class="icon rock"
+          role="button"
+          tabindex="5"
+          aria-label="rock"
+        ></div>
+      </section>
+
+      <section id="resultPage">
+        <h2 aria-hidden="true">Result Page</h2>
+        <div id="userIcon" class="icon"></div>
+        <div id="houseIcon" class="icon"></div>
+        <div id="youPicked" class="picked">Player One</div>
+        <div id="housePicked" class="picked">The Computer Picked</div>
+
+        <div id="whoWon"></div>
+
+        <button id="playAgain">PLAY AGAIN</button>
+      </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="attribution">
+      Frontend Mentor Challenges
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >you to make you own version of the game. No code supplied</a
+      >. Coded by
+      <a href="https://github.com/AOL83" target="_blank"
+        >Terence. E. A. Lewis.</a
+      >.<br />Verify on
+      <a
+        href="https://github.com/AOL83/rock-paper-scissors-lizard-spock"
+        target="_blank"
+        >Github</a
+      >
+      <!--CONTACT INFO-->
+      <div class="contact-info">
+        <p><i class="fas fa-mobile-alt"></i> +44 (0) 7398-846-844</p>
+        <p><i class="far fa-envelope"></i>codestrategysolutions@gmail.com</p>
+      </div>
+      <!--SOCIAL MEDIA LINKS-->
+      <ul class="social-networks">
+        <li>
+          <a
+            href="https://facebook.com"
+            target="_blank"
+            rel="noopener"
+            aria-label="Visit our Facebook page (opens in a new tab)"
+            ><i class="fab fa-facebook-f"></i
+          ></a>
+        </li>
+        <li>
+          <a
+            href="https://instagram.com"
+            target="_blank"
+            rel="noopener"
+            aria-label="Check us out on Instagram (opens in a new tab)"
+            ><i class="fab fa-instagram"></i
+          ></a>
+        </li>
+        <li>
+          <a
+            href="https://twitter.com"
+            target="_blank"
+            rel="noopener"
+            aria-label="Check us out on Twitter (opens in a new tab)"
+            ><i class="fab fa-twitter"></i
+          ></a>
+        </li>
+      </ul>
+    </footer>
+    <!-- End of Footer -->
+
+    <!-- Modal -->
+    <div id="modal" aria-hidden="true" role="dialog">
+      <div id="modalContent">
+        <button id="closeModal">&times;</button>
+        <p><img src="images/image-rules-bonus.svg" alt="Game Rules" /></p>
+      </div>
+    </div>
+
+    <audio data-sound="bg-sound">
+      <source src="sounds/bgSound.mp3" type="audio/mpeg" />
+      <source src="sounds/bgSound.wav" type="audio/wav" />
+    </audio>
+
+    <audio data-sound="user-choice">
+      <source src="sounds/userChoice.mp3" type="audio/mpeg" />
+      <source src="sounds/userChoice.wav" type="audio/wav" />
+    </audio>
+
+    <audio data-sound="you-won">
+      <source src="sounds/youWon.mp3" type="audio/mpeg" />
+      <source src="sounds/youWon.wav" type="audio/wav" />
+    </audio>
+
+    <audio data-sound="you-lose">
+      <source src="sounds/youLose.mp3" type="audio/mpeg" />
+      <source src="sounds/youLose.wav" type="audio/wav" />
+    </audio>
+
+    <audio data-sound="draw">
+      <source src="sounds/draw.mp3" type="audio/mpeg" />
+      <source src="sounds/draw.wav" type="audio/wav" />
+    </audio>
+
+    <script src="js/script.js"></script>
+    <script
+      src="https://kit.fontawesome.com/2fa864f429.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+  <!-- End of Body -->
+</html>
