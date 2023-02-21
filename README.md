@@ -73,7 +73,18 @@ Want some support on the challenge? [Join our Slack community](https://www.front
 
 ##  CODES and Explanation's / Building my project 
 
+window.onload = function() {
+  // code to execute after the page has finished loading
+}
 
+
+A window.onload function is an event listener in JavaScript that is used to ensure that all the HTML and CSS code of a web page is loaded before executing the JavaScript code. This function waits for the entire DOM tree to load, including images and other external resources, and then it triggers the JavaScript code to run.
+
+By encapsulating JavaScript code inside a window.onload function, you can ensure that the code executes after the HTML and CSS are loaded, preventing errors and ensuring that the code is properly executed. It helps to avoid issues like the JavaScript code running before the page has finished loading, leading to errors or elements not being available in the DOM.
+
+JavaScript pages are better kept in a window.onload function because it ensures that all the HTML elements in the page are fully loaded and available for manipulation before executing the JavaScript code. If the JavaScript code is executed before the page is fully loaded, some elements might not yet exist in the DOM, and the JavaScript code may not be able to find or manipulate those elements. This can result in errors or unexpected behavior in the code.
+
+By encapsulating my JavaScript code within the window.onload function, it guarantees that the code will not be executed until all the HTML elements in the page have been fully loaded, and the code will be able to find and manipulate any element in the DOM that it needs to work with. This ensures that the code will run correctly and consistently, without any unexpected errors or behavior.
 
 // AUDIO PLAYER CODE
 const audio = document.getElementById("audio");
@@ -142,6 +153,7 @@ Finally, the audio element has an addEventListener method that listens for an "e
 // CLOCK
 The clock section of the code creates a function called updateClock. This function declares a variable "now" which is assigned the current date and time using the Date object. The date string and time string are then extracted from the "now" variable and assigned to the HTML elements with the id "date" and "time", respectively.
 The setInterval function is used to call the updateClock function every second, so the clock updates continuously.
+
 // MODAL
 In the modal section of the code, the first three lines declare constants using the "const" keyword. These constants are assigned to elements in the HTML document with the same id values as their constant names.
 The next section uses addEventListener to listen for a click event on the btnOpenModal element. When the button is clicked, the display style of the modal element is set to "block" and the top style of the modalContent element is set to 0.
@@ -150,7 +162,7 @@ Finally, the window object has an addEventListener method that listens for a cli
 In conclusion, this code uses functions, constants, variables, and various punctuation marks such as semicolons, colons, commas, apostrophes, quotation marks, braces, brackets, full stops, parentheses, square brackets, curly braces, equal signs, double equal signs, triple equal signs, greater than or equal to sign, plus sign, "if" and "else" statements, and parentheses to create an audio player, clock, and modal.
 
 
-// GLOBAL CODE syntax 
+// GLOBAL VARIABLES
 const allChoices = ["scissors", "spock", "paper", "lizard", "rock"];
 const startPage = document.querySelector("#startPage");
 const arrChoices = startPage.querySelectorAll("div");
@@ -169,6 +181,7 @@ The "containerScore" constant is used to select the score container and the "sco
 Finally, the "playAgainButton" constant is used to select the button that allows the player to play again.
 Note that the code uses the "querySelector" method to select elements from the HTML document and the "querySelectorAll" method to select multiple elements. These methods are used to access the DOM (Document Object Model) and manipulate elements in the HTML document.
 
+Using global variables can lead to naming collisions, unexpected behavior, and poor code organization. This is because global variables can be accessed and modified from anywhere in the code, making it difficult to keep track of changes and dependencies. By encapsulating your code within a function or module, you can limit the scope of your variables and functions, making it easier to manage and debug your code. It also reduces the risk of naming collisions and conflicts with other libraries or scripts that may be running on the same page.
 
 
 
