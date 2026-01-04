@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Contact | Alex Olivares</title>
+    <meta
+      name="description"
+      content="Get in touch with Alex Olivares for product design and engineering collaborations."
+    />
+    <link rel="stylesheet" href="/assets/css/main.css" />
+    <script src="/assets/js/main.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="container header-content">
+        <a class="logo" href="/">AO</a>
+        <nav class="site-nav" aria-label="Primary">
+          <a href="/projects/">Projects</a>
+          <a href="/about/">About</a>
+          <a href="/contact/">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="page-hero">
+        <div class="container">
+          <p class="eyebrow">Contact</p>
+          <h1>Let’s build something that feels effortless.</h1>
+          <p class="lead">
+            Tell me about your goals, timelines, and team. I’ll respond within two business days.
+          </p>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container contact-grid">
+          <div class="contact-details">
+            <h2>Ways to connect</h2>
+            <ul>
+              <li>
+                <span class="label">Email</span>
+                <a href="mailto:hello@alexolivares.dev">hello@alexolivares.dev</a>
+              </li>
+              <li>
+                <span class="label">Location</span>
+                Austin, TX · Remote-friendly
+              </li>
+              <li>
+                <span class="label">Availability</span>
+                New projects starting next month
+              </li>
+            </ul>
+            <div class="panel">
+              <h3>Project checklist</h3>
+              <p class="muted">Helpful details to include in your message:</p>
+              <ul class="checklist">
+                <li>Primary goals and success metrics</li>
+                <li>Target users and platforms</li>
+                <li>Desired launch window</li>
+              </ul>
+            </div>
+          </div>
+
+          <form class="contact-form" id="contact-form" novalidate>
+            <div class="field">
+              <label for="name">Full name</label>
+              <input
+                id="name"
+                name="name"
+                type="text"
+                autocomplete="name"
+                required
+                minlength="2"
+              />
+              <span class="error" data-error-for="name"></span>
+            </div>
+            <div class="field">
+              <label for="email">Email address</label>
+              <input
+                id="email"
+                name="email"
+                type="email"
+                autocomplete="email"
+                required
+              />
+              <span class="error" data-error-for="email"></span>
+            </div>
+            <div class="field">
+              <label for="company">Company or team</label>
+              <input id="company" name="company" type="text" autocomplete="organization" />
+            </div>
+            <div class="field">
+              <label for="message">Project summary</label>
+              <textarea
+                id="message"
+                name="message"
+                rows="5"
+                minlength="20"
+                required
+              ></textarea>
+              <span class="error" data-error-for="message"></span>
+            </div>
+            <button class="button primary" type="submit">Send message</button>
+            <p class="form-status" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-content">
+        <p>© <span data-year></span> Alex Olivares. All rights reserved.</p>
+        <div class="footer-links">
+          <a href="/about/">About</a>
+          <a href="/projects/">Projects</a>
+          <a href="/contact/">Contact</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
