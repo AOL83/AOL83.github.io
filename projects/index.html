@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" data-root="/">
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -9,8 +9,6 @@
       content="Selected product launches and engineering case studies by Alex Olivares."
     />
     <link rel="stylesheet" href="/assets/css/main.css" />
-    <script src="/assets/js/theme.js"></script>
-    <script src="/assets/js/include-partials.js" defer></script>
     <script src="/assets/js/main.js" defer></script>
   </head>
   <body>
@@ -23,7 +21,6 @@
           <a href="/about/">About</a>
           <a href="/contact/">Contact</a>
         </nav>
-        <button class="theme-toggle" type="button">Dark mode</button>
       </div>
     </header>
 
@@ -59,7 +56,6 @@
                   <li>Stack: React, Node, Postgres</li>
                   <li>Impact: 32% faster checkouts</li>
                 </ul>
-                <a class="text-link" href="/projects/cabin-app/">Read case study</a>
               </div>
             </article>
 
@@ -70,7 +66,7 @@
                 loading="lazy"
               />
               <div class="card-body">
-                <h2>Replicator Terminal</h2>
+                <h2>Harness Logistics</h2>
                 <p>
                   Delivered real-time shipment intelligence for operations teams across three
                   regions.
@@ -80,7 +76,6 @@
                   <li>Stack: Vue, GraphQL, Redis</li>
                   <li>Impact: 2x faster dispatching</li>
                 </ul>
-                <a class="text-link" href="/projects/replicator-terminal/">Read case study</a>
               </div>
             </article>
 
@@ -91,7 +86,7 @@
                 loading="lazy"
               />
               <div class="card-body">
-                <h2>Rock Paper Scissors</h2>
+                <h2>RPSLS Arena</h2>
                 <p>
                   Crafted a gamified learning experience with micro-interactions and accessibility
                   built in.
@@ -101,7 +96,6 @@
                   <li>Stack: HTML, CSS, JS</li>
                   <li>Impact: 18k+ sessions</li>
                 </ul>
-                <a class="text-link" href="/projects/rock-paper-scissors/">Read case study</a>
               </div>
             </article>
 
@@ -141,6 +135,15 @@
       </section>
     </main>
 
-    <div id="siteFooter"></div>
+    <footer class="site-footer">
+      <div class="container footer-content">
+        <p>© <span data-year></span> Alex Olivares. All rights reserved.</p>
+        <div class="footer-links">
+          <a href="/about/">About</a>
+          <a href="/projects/">Projects</a>
+          <a href="/contact/">Contact</a>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>

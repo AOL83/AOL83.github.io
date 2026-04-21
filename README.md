@@ -5,35 +5,24 @@ A mobile-first GitHub Pages portfolio site for showcasing projects, services, an
 ## Purpose
 
 This site highlights featured work, shares a short bio, and provides a contact form for new
-collaborations with a shared, CabinApp-inspired footer and a light/dark theme toggle.
+collaborations.
 
 ## File tree
 
 ```
 .
-├── 404.html
 ├── about
 │   └── index.html
 ├── assets
 │   ├── css
 │   │   └── main.css
 │   └── js
-│       ├── include-partials.js
-│       ├── main.js
-│       └── theme.js
+│       └── main.js
 ├── contact
 │   └── index.html
-├── index.html
-├── partials
-│   └── footer.html
 ├── projects
-│   ├── cabin-app
-│   │   └── index.html
-│   ├── index.html
-│   ├── replicator-terminal
-│   │   └── index.html
-│   └── rock-paper-scissors
-│       └── index.html
+│   └── index.html
+└── index.html
 ```
 
 ## How to run locally

@@ -1,20 +1,19 @@
 const setActiveNav = () => {
   const path = window.location.pathname.replace(/\/+$/, "/") || "/";
-  const navLinks = Array.from(document.querySelectorAll(".site-nav a"));
+  const navLinks = document.querySelectorAll(".site-nav a");
 
-  let bestMatch = null;
   navLinks.forEach((link) => {
     const linkPath = new URL(link.href).pathname.replace(/\/+$/, "/");
-    if (path === linkPath || (linkPath !== "/" && path.startsWith(linkPath))) {
-      if (!bestMatch || linkPath.length > bestMatch.path.length) {
-        bestMatch = { link, path: linkPath };
-      }
+    if (linkPath === path) {
+      link.setAttribute("aria-current", "page");
     }
   });
+};
 
-  if (bestMatch) {
-    bestMatch.link.setAttribute("aria-current", "page");
-  }
+const setFooterYear = () => {
+  document.querySelectorAll("[data-year]").forEach((node) => {
+    node.textContent = new Date().getFullYear();
+  });
 };
 
 const setupContactForm = () => {
@@ -64,4 +63,5 @@ const setupContactForm = () => {
 };
 
 setActiveNav();
+setFooterYear();
 setupContactForm();
